@@ -1,0 +1,26 @@
+{
+	"manifest_version":2,
+	"name":"RemoveNamuLink",
+	"description":"나무위키 하이퍼링크 제거",
+	"version":"1.0.0",
+	"permissions":["storage","http://namu.wiki/"],
+	"icons":
+	{
+		"48":"icon.png"
+	},
+	"browser_action":
+	{
+		"default_icon":"icon.png",
+		"default_popup":"popup.html"
+	},
+	"background":
+	{
+		"scripts":["background.js"]
+	},
+	"content_scripts":
+	[{
+		"matches":["https://namu.wiki/*"],
+		"js":["content.js"]
+	}],
+	"web_accessible_resources":["removenamulink.js"]
+}
